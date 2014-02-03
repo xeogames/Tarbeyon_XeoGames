@@ -13,7 +13,7 @@ class Game(object):
     def __init__(self):
 
         #Debugging stuff
-        self.debug = True
+        self.debug = False
         self.debugShown = True
         self.debugMonsters = True
         self.showFPS = True
@@ -53,12 +53,12 @@ class Game(object):
         self.icon = pygame.image.load("Images" + os.sep + "Icon.png")
 
         self.Running = True
-#        if self.debug:
-#            self.state = "player_turn"
-#            print("Debug is enabled! Beware, strangers")
- #       else:
-        self.intromusicplay = True
-        self.state = "splashscreen"
+        if self.debug:
+            self.state = "player_turn"
+            print("Debug is enabled! Beware, strangers")
+        else:
+            self.intromusicplay = True
+            self.state = "splashscreen"
 
     def construct_screen(self):
 
